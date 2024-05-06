@@ -1,7 +1,7 @@
-
+// items that the computer can choose from
 var itemsForGame = ["Rock", "Paper", "Scissors"];
-// var humanchoice = prompt("What do you choose, Rock, Paper or Scissors?");
 
+// we get the human prompted choice
 function getHumanChoice()   {
     let humanchoice = prompt("What do you choose, Rock, Paper or Scissors?");
     humanchoice = humanchoice.toLowerCase();
@@ -25,7 +25,6 @@ function getHumanChoice()   {
 }
 
 // We get the computer random item
-
 function getComputerChoice()    {
 
     let randomItem; 
@@ -45,15 +44,14 @@ function getComputerChoice()    {
     }   
 }
 
+// scores for the round and the game function
 var humanScore = 0;
 var computerScore = 0;
 
-
+// function that returns the player choice and the computer random choice and increments or decrements the score
 function playRound(humanselection, computerselection)    {
 
     if (humanselection === computerselection)  {
-        humanScore;
-        computerScore;
         return "Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nIt's a tie!" + 
         "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore;
     }
@@ -61,7 +59,6 @@ function playRound(humanselection, computerselection)    {
     if ((humanselection == "Rock" && computerselection == "Paper") ||
        (humanselection == "Paper" && computerselection == "Scissors") ||
        (humanselection == "Scissors" && computerselection == "Rock"))   {
-        humanScore;
         computerScore++;
         return "Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nLoser!" + 
         "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore; 
@@ -71,27 +68,30 @@ function playRound(humanselection, computerselection)    {
        (humanselection == "Scissors" && computerselection == "Paper") || 
        (humanselection == "Rock" && computerselection == "Scissors"))   {
         humanScore++;
-        computerScore;
         return "Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nYou won, congratulations!" + 
         "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore;
         }
 }
 
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-
-
-
-
 function playGame() {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
+
 }
+//console.log(playRound(humanSelection, computerSelection))
+
+
+
+    for (var i = 0; i <= 15; i++)    {
+    let Gameresult;
+    Gameresult = playGame();
+    }
+
+
 console.log(playGame())
+
+
+
+
+
