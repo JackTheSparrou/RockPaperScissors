@@ -52,45 +52,46 @@ var computerScore = 0;
 function playRound(humanselection, computerselection)    {
 
     if (humanselection === computerselection)  {
-        return "Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nIt's a tie!" + 
-        "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore;
+        console.log("Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nIt's a tie!" + 
+        "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore);
     }
 
     if ((humanselection == "Rock" && computerselection == "Paper") ||
        (humanselection == "Paper" && computerselection == "Scissors") ||
        (humanselection == "Scissors" && computerselection == "Rock"))   {
         computerScore++;
-        return "Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nLoser!" + 
-        "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore; 
+        console.log("Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nLoser!" + 
+        "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore); 
        }
     
     if ((humanselection == "Paper" && computerselection == "Rock") || 
        (humanselection == "Scissors" && computerselection == "Paper") || 
        (humanselection == "Rock" && computerselection == "Scissors"))   {
         humanScore++;
-        return "Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nYou won, congratulations!" + 
-        "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore;
+        console.log("Your choice: " + humanselection + "\nComputer random: " + computerselection + "\nYou won, congratulations!" + 
+        "\nPlayer score: " + humanScore + "\nComputer score: " + computerScore);
         }
 }
 
 function playGame() {
+
+    for (var i = 0; i <= 10; i++)    {
+
     let humanSelection = getHumanChoice();
     let computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
 
-}
-//console.log(playRound(humanSelection, computerSelection))
+        if (humanScore === 3)   {
+            console.log("You won the game!");
+            break;
 
-
-
-    for (var i = 0; i <= 15; i++)    {
-    let Gameresult;
-    Gameresult = playGame();
+        } else if (computerScore === 3) {
+            console.log("The computer wins the game!");
+            break;
+        }
     }
-
-
-console.log(playGame())
-
+}
+playGame();
 
 
 
